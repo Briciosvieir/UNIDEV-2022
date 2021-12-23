@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Unidev 2022 </title>
+
+  <script type="text/javascript">
+
+    function contador(palavras) {
+      var limite = 255;
+      var palavra = palavras.value.length;
+      var max = document.getElementById("frase").setAttribute("sub",limite);
+      var continha = document.getElementById("sub");
+      var resto = limite-palavra;
+      continha.innerHTML=resto+"/"+limite+" Caracteres";
+
+    }
+
+  </script>
+
+</head>
+<link rel="stylesheet" href="css/style.css">
+<body> 
+
+    <div> <h1><p>Phases Cleaner</p></h1> </div>
+
+     <div class="posicao">
+      <h2 >Limpe palavrões de suas frases</h2>
+      <h3 >Digite a sua frase</h3>
+      </div>
+
+     <div>
+        <textarea id="frase" onclick="contador(this)" onkeydown="contador(this)"  onkeypress="contador(this)" maxlength="255">   </textarea>
+     
+     </div>
+   
+   <div  class="posic"><p id="sub"> </p> </div>
+   <br>
+   <br>
+    <p id="quant"> </p>
+  <button id="botao"  type="submit"> Limpar frases  </button> 
+
+
+  <script type="text/javascript">
+    
+    function Editor(){
+      var textarea = document.getElementById('frase');
+      var edit = /porra|puto|merda|burro/gi;
+      var frase1 = textarea.value;
+      var frase2 = frase1.replace(edit,'****');
+      document.getElementById('frase').value = frase2;
+
+    }
+     document.getElementById('botao').addEventListener('click',Editor);
+     
+    
+  </script>
+ 
+  <footer><p> © Copyright 2021 Todos os direitos reservados</p></footer>
+ </body>
+
+</html>
+
